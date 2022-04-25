@@ -2,6 +2,7 @@ import { IfStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FlagsService } from 'src/app/Services/flags.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { FlagsService } from 'src/app/Services/flags.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  imgUrl= 'https://localhost:44316/photoes';
+  imgUrl= environment.imag+'/photoes';
   roleId:string='';
   serverName!:string;
   gender!:string;

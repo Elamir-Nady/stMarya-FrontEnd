@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
-  baseUrl:""
+  baseUrl:"http://ebtiday-001-site1.itempurl.com/api/",
+  imag:'http://ebtiday-001-site1.itempurl.com'
 
 };
