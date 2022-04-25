@@ -1,0 +1,30 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <h3 style="text-align: center;" class="mt-5 ">تعديل بيانات خادم</h3>
+    
+        <form  [formGroup]="serverForm" class="col-lg-6  col-md-6 col-sm-12 m-auto" (ngSubmit)="submit()" >
+            <input style="text-align: right;" type="number" class="form-control mt-3  mb-3" formControlName="id" readonly>
+            <input style="text-align: right;" type="text" class="form-control mb-3" placeholder="إسم الخادم" readonly formControlName="name">
+            <input style="text-align: right;" type="text" class="form-control mb-3"  placeholder="الموبايل " formControlName="phone" pattern="^01[0125][0-9]{8}$"
+            [class.is-invalid]="serverForm.get('phone')?.invalid&&serverForm.get('phone')?.touched"
+            [class.is-valid]="serverForm.get('phone')?.valid&&serverForm.get('phone')?.touched">
+            
+            <select name="class" class="form-control mb-3"  formControlName="class"  
+            [class.is-invalid]="serverForm.get('class')?.invalid&&serverForm.get('class')?.touched"
+            [class.is-valid]="serverForm.get('class')?.valid&&serverForm.get('class')?.touched">
+                <option selected disabled value="0">اختار الخدمة </option>
+                <option *ngFor="let item of classes"  value="{{item.id}}">{{item.name}} </option>
+
+            </select>
+
+            <input style="text-align: right;"type="date" class="form-control  mb-3" max="{{date | date:'yyyy-MM-dd'}}" formControlName="birthday"
+            [class.is-invalid]="serverForm.get('birthday')?.invalid&&serverForm.get('birthday')?.touched"
+            [class.is-valid]="serverForm.get('birthday')?.valid&&serverForm.get('birthday')?.touched">
+            <div class="row">
+                <input type="submit" [disabled]="serverForm.invalid" class="btn btn-warning col-lg-4  col-md-4 col-sm-12 m-auto"value="تعديل">
+    
+            </div>
+        </form>
+    </div>
+    </div>

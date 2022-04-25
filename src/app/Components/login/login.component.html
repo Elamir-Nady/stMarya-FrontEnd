@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<h1 id="heading1">تسجيل الدخول</h1>
+<img src="assets/logo.jpg" class="logo" alt="Login Logo" style="width:200px; height:200px;">
+<div>
+  <form [formGroup]="loginForm" class="myForm"  (ngSubmit)="login()">
+      <div class="input-container">
+          <i class="fa fa-lock icon"></i>
+          <input type="number"  placeholder="Id" min="1"   formControlName="Id" class="input-field" required>
+      </div>
+      <div class="input-container">
+         <i class="fa fa-key icon"></i>
+         <input type="password"  placeholder="كلمة السر" formControlName="Password"  class="input-field"  required>
+        </div>
+        <div>
+          <p *ngIf="NotAuth" style="text-align: right" class="alert alert-danger">
+            خطاء في رقم هوية الخادم أو كلمة السر ..!
+          </p>
+        </div>
+     <div>
+         <input type="submit" class="bttn" [disabled]="loginForm.invalid" value="Login" >
+    </div>
+  </form>
+</div>

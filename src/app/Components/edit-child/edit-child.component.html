@@ -1,0 +1,17 @@
+<div class="container-fluid">
+
+<div class="row">
+    <h3 style="text-align: center;" class="mt-5 ">تعديل بيانات طفل</h3>
+
+    <form  [formGroup]="childForm" class="col-lg-6  col-md-6 col-sm-12 m-auto" (ngSubmit)="submit()" >
+        <input style="text-align: right;" type="number" class="form-control mt-3  mb-3" formControlName="id" readonly>
+        <input style="text-align: right;" type="text" class="form-control mb-3" formControlName="name">
+        <input style="text-align: right;"type="date" class="form-control  mb-3" max="{{date | date:'yyyy-MM-dd'}}" formControlName="birthday">
+        <input style="text-align: right;"type="file" (change)="getFile($event)" formControlName="file" class="form-control mb-3" accept="image/png, image/gif, image/jpeg , image/jpg " required>
+        <div class="row">
+            <input type="submit" [disabled]="childForm.invalid" class="btn btn-warning col-lg-4  col-md-4 col-sm-12 m-auto"value="تعديل">
+
+        </div>
+    </form>
+</div>
+</div>

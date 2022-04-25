@@ -1,0 +1,73 @@
+
+  @media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1106px)  {
+  
+      /* Force table to not be like tables anymore */
+      table{
+          margin-top: 2% !important;
+          display: block !important; 
+  
+      }
+      table, thead, tbody, th, td, tr { 
+          display: block !important; 
+          width: 100% !important;
+      }
+      
+      /* Hide table headers (but not display: none;, for accessibility) */
+      thead tr { 
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+      }
+      
+      tr { border: 1px solid #ccc; }
+      
+      td { 
+          /* Behave  like a "row" */
+          border: none;
+          border-bottom: 1px solid #eee; 
+          position: relative;
+          padding-left: 50%; 
+      }
+      
+      td:before { 
+          /* Now like a table header */
+          position: absolute;
+          /* Top/left values mimic padding */
+          top: 6px;
+          left: 6px;
+          width: 45%; 
+          padding-right: 10px; 
+          white-space: nowrap;
+      }
+      
+      /*
+      Label the data
+      */
+    
+ 
+      td:nth-of-type(1):before { content: "Id"; }
+      td:nth-of-type(2):before { content: "الأسم"; }
+      td:nth-of-type(3):before { content: "الفصل"; }
+      td:nth-of-type(4):before { content: "التيليفون"; }
+      td:nth-of-type(5):before { content: "تاريخ الميلاد"; }
+    
+      td:nth-of-type(5) { text-align: left !important; }
+      td:nth-of-type(6 ) {padding-left: 0% !important;}
+        td:nth-of-type(6) {border-bottom: 1px solid black;}
+      .btn{
+          width: 98% !important;
+          margin-left: 1% !important;
+          margin-right: 1% !important;
+          margin-top: 1% !important;
+          padding-left: 0% !important;
+          margin-bottom: 1% !important;
+      }
+  }
+  
+  
+  
+  
+  
+  
+  

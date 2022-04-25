@@ -1,0 +1,51 @@
+import { IfStmt } from '@angular/compiler';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FlagsService } from 'src/app/Services/flags.service';
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
+})
+export class HeaderComponent implements OnInit {
+  imgUrl= 'https://localhost:44316/photoes';
+  roleId:string='';
+  serverName!:string;
+  gender!:string;
+  img!:string;
+  userid:any;
+  constructor(private flagsService:FlagsService,
+              private router:Router) {
+    this.flagsService.roleId.subscribe((res)=>{
+      if(res){ this.roleId=res }})
+
+    this.flagsService.username.subscribe((res)=>{
+      if(res){this.serverName=res;} })
+
+    this.flagsService.gender.subscribe((res)=>{
+      if(res){this.gender=res;} })
+
+    this.flagsService.photo.subscribe((res)=>{
+      if(res){this.img=res;
+      } })
+      this.flagsService.serverId.subscribe((res)=>{
+        if(res){this.userid=res as unknown as number;
+        } })
+   }
+   
+
+  ngOnInit(): void {
+
+  }
+  edit(){
+    localStorage.setItem('childId',String(this.userid));
+    this.flagsService.childId.next(String(this.userid));
+    this.router.navigate(['/editServer']);
+  }
+
+  logout(){
+    this.flagsService.logout();
+    this.router.navigate(['/login']);
+  }
+}
