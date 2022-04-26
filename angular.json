@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "SARAI": {
+    "ebtida2y": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "SARAI:build:production"
+              "browserTarget": "ebtida2y:build:production"
             },
             "development": {
-              "browserTarget": "SARAI:build:development"
+              "browserTarget": "ebtida2y:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "SARAI:build"
+            "browserTarget": "ebtida2y:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "SARAI"
+  "defaultProject": "ebtida2y"
 }
