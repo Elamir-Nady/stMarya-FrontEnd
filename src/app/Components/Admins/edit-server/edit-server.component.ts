@@ -78,10 +78,12 @@ export class EditServerComponent implements OnInit {
         this.server.birthday = birthday;
         this.genericService.Put('Server/UpdateServer', this.server).subscribe((resp) => {
           if (resp) {
+            alert('تم تعديل البيانات بنجاح');
             this.router.navigate(['/servers']);
           }
         }, (error) => {
           if (error.status == 200) {
+            alert('تم تعديل البيانات بنجاح');
             this.router.navigate(['/servers']);
 
           }

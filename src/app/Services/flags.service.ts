@@ -49,4 +49,13 @@ export class FlagsService {
     )
     return role;
   }
+  getCLass():string{
+    let classs='';
+
+    this.classId.subscribe(res=>{
+      classs=res;
+    }
+    )
+    return classs;
+  }
 }

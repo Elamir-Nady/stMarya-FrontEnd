@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   gender!:string;
   img!:string;
   userid:any;
+  classRole:boolean=false;
   constructor(private flagsService:FlagsService,
               private router:Router) {
     this.flagsService.roleId.subscribe((res)=>{
@@ -33,7 +34,13 @@ export class HeaderComponent implements OnInit {
       this.flagsService.serverId.subscribe((res)=>{
         if(res){this.userid=res as unknown as number;
         } })
+
+       let classid= this.flagsService.getCLass();
+       if(classid=='1'){
+        this.classRole=true;
+       }
    }
+   
    
 
   ngOnInit(): void {

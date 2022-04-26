@@ -60,11 +60,15 @@ export class LoginComponent implements OnInit {
                
                 this.router.navigate(['/myClass']);
               }
+              if(resp.roleId==2&&resp.classId==1){
+               
+                this.router.navigate(['/generalServer']);
+              }
               if(resp.roleId==7&&resp.classId==1)        {
                 this.router.navigate(['/admin']);
               }
               if(resp.roleId==5&&resp.classId==1)        {
-                this.router.navigate(['/admin']);
+                this.router.navigate(['/subAdmin']);
               }
               if(resp.roleId==4&&resp.classId==1)        {
                 this.router.navigate(['/moderator']);

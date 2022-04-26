@@ -15,6 +15,7 @@ import { SubAdminComponent } from './Components/Admins/sub-admin/sub-admin.compo
 import { ModeratorComponent } from './Components/Admins/moderator/moderator.component';
 import { ServersComponent } from './Components/Admins/servers/servers.component';
 import { EditServerComponent } from './Components/Admins/edit-server/edit-server.component';
+import { GeneralServerComponent } from './Components/general-server/general-server.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EditServerComponent } from './Components/Admins/edit-server/edit-server
     SubAdminComponent,
     ModeratorComponent,
     ServersComponent,
-    EditServerComponent
+    EditServerComponent,
+    GeneralServerComponent
   ],
   imports: [
     BrowserModule,
