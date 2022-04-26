@@ -10,6 +10,7 @@ import { GeneralServerComponent } from './Components/general-server/general-serv
 import { LoginComponent } from './Components/login/login.component';
 import { ServerHomeComponent } from './Components/server-home/server-home.component';
 import { ChangePasswordComponent } from './Components/SharedComponents/change-password/change-password.component';
+import { PhotoComponent } from './Components/SharedComponents/photo/photo.component';
 import { AuthGuard } from './Guards/auth.guard';
 import { AdminGuard } from './Guards/Roles/admin.guard';
 import { GeneralClassGuard } from './Guards/Roles/generalClass.guard';
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:"editChild",component:EditChildComponent,canActivate:[AuthGuard]},
   {path:"changePassword",component:ChangePasswordComponent,canActivate:[AuthGuard]},
   {path:"generalServer",component:GeneralServerComponent,canActivate:[AuthGuard&&ServerGuard]},
+  {path:"photo",component:PhotoComponent,canActivate:[AuthGuard&&ServerGuard]},
 
 
 

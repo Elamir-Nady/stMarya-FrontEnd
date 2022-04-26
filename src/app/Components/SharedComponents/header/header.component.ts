@@ -39,6 +39,8 @@ export class HeaderComponent implements OnInit {
        if(classid=='1'){
         this.classRole=true;
        }
+
+
    }
    
    
@@ -51,7 +53,11 @@ export class HeaderComponent implements OnInit {
     this.flagsService.childId.next(String(this.userid));
     this.router.navigate(['/editServer']);
   }
-
+prvphoto(){
+  localStorage.setItem('childId',String(this.imgUrl+'/'+this.img));
+  this.flagsService.childId.next(String(this.imgUrl+'/'+this.img));
+  this.router.navigate(['/photo']);
+}
   logout(){
     this.flagsService.logout();
     this.router.navigate(['/login']);

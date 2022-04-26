@@ -1,7 +1,7 @@
 <nav  class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
         <div>
-          <img [hidden]="img=='null'" src="{{imgUrl+'/'+ img}}" alt="profilePicture" class="profilePhoto" >
+          <img (click)="prvphoto()" [hidden]="img=='null'" src="{{imgUrl+'/'+ img}}" alt="profilePicture" class="profilePhoto" >
           <img [hidden]="gender!='f'||img!='null'" src="assets/images/female.png" class="profilePhoto"  alt="logo">
           <img [hidden]="gender!='m'||img!='null'" src="assets/images/male.png"  class="profilePhoto"  alt="logo">
         <!-- <img src="assets/logo.jpg" class="profilePhoto">  -->

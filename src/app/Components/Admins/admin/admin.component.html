@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
     <div class="row">
-        <h3 style="text-align: center;" class="mt-5 ">تعديل بيانات طفل</h3>
+        <h3 style="text-align: center;" class="mt-5 ">تغيير صورة خادم</h3>
     
         <form  [formGroup]="photofrm" class="col-lg-6  col-md-6 col-sm-12 m-auto" (ngSubmit)="submit()" >
             <input style="text-align: right;" type="number" class="form-control mt-3  mb-3" #id (ngModelChange)="checkServer(id.value)" formControlName="id" required >
@@ -10,6 +10,21 @@
            <input style="text-align: right;"type="file" (change)="getFile($event)" formControlName="file" class="form-control mb-3" accept="image/png, image/gif, image/jpeg , image/jpg " required>
             <div class="row">
                 <input type="submit" [disabled]="photofrm.invalid" class="btn btn-success col-lg-4  col-md-4 col-sm-12 m-auto"value="تعديل">
+    
+            </div>
+        </form>
+
+        <h3 style="text-align: center;" class="mt-5 ">  إضافة خادم</h3>
+        <form  [formGroup]="serverfrm" class="col-lg-6  col-md-6 col-sm-12 m-auto"  (ngSubmit)="AddServer()" >
+            <input [class.is-valid]="!check&&serverfrm.controls['sid'].touched"  [class.is-invalid]="check&&serverfrm.controls['sid'].touched" style="text-align: right;" type="number" class="form-control mt-3  mb-3"  #sid (ngModelChange)="checkServerfound(sid.value)"  formControlName="sid" required >
+
+            <input style="text-align: right;" type="text" class="form-control mb-3" formControlName="sname" required >
+            <label for="" class="me-2">ذكر</label>
+            <input style="text-align: right;" type="radio" value="m" name="gender" class="-mb-3" formControlName="gender" required >
+            <label for="" class="ms-5 me-2">أنثي</label>
+            <input style="text-align: right;" type="radio" value="f" name="gender" class=" mb-3" formControlName="gender" required >
+            <div class="row">
+                <input type="submit" [disabled]="serverfrm.invalid" class="btn btn-success col-lg-4  col-md-4 col-sm-12 m-auto"value="إضافة">
     
             </div>
         </form>

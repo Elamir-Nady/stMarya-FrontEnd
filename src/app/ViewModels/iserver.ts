@@ -10,12 +10,13 @@ export interface IServer {
        name :string ,
        password :string , 
        phone:string  ,
-       birthday :Date ,
+       birthday? :Date ,
        photoPath :string ,
-       class:IClass  ,
-       role:IRole  ,
+       class?:IClass  ,
+       role?:IRole  ,
        isActive :boolean , 
-       child:IChild[]   ,
-       childrenAttendances:IAttendance [] ,
+       child?:IChild[]   ,
+       childrenAttendances?:IAttendance [] ,
+       gender:string
 
 }

@@ -13,16 +13,26 @@ import { IServer } from 'src/app/ViewModels/iserver';
 })
 export class AdminComponent implements OnInit {
   photofrm!: FormGroup;
+  serverfrm!: FormGroup;
   file!:File;
   server!:IServer;
 fileNull:boolean=false;
 fileNotMatch:boolean=false;
+check:boolean=false;
 
   constructor(private genericService:GenericService,private formBuilder:FormBuilder) { 
       this.photofrm = this.formBuilder.group({
         id: [Validators.required],
         name: ['',Validators.required],
         file: [,Validators.required],
+  
+      });
+
+      this.serverfrm = this.formBuilder.group({
+        sid: [Validators.required],
+        sname: ['',Validators.required],
+        gender: ['m',Validators.required],
+
   
       });
     
@@ -38,11 +48,27 @@ this.genericService.getByID("server/GetserverById",id).subscribe((resp)=>{
 this.server=resp;
 this.photofrm.controls['name'].setValue(resp.name);
 
+
 })
 }
 }
 
+checkServerfound(id:any){
+  this.serverfrm.controls['sname'].setValue('');
+  this.check=false;
 
+  id= id as number;
+this.genericService.getByID("server/GetserverById",id).subscribe((resp)=>{
+this.server=resp;
+this.serverfrm.controls['sname'].setValue(resp.name);
+if(resp.id>0){
+  this.check=true;
+}
+
+
+})
+
+}
 
 getFile(event: any) {
    
@@ -71,5 +97,38 @@ this.genericService.uploadPhoto(photoModel,"server/UploadePhoto").subscribe(res=
 })
 
 }
+}
+
+AddServer(){
+  let id=this.serverfrm.get('sid')?.value;
+  let name=this.serverfrm.get('sname')?.value;
+  let gender=this.serverfrm.get('gender')?.value;
+  let server:IServer={
+    id:id,
+    name:name,
+    classId:2,
+    roleId:2,
+    photoPath:'',
+    isActive:true,
+    password:"123456",
+    phone:'010',
+    gender:gender,
+
+
+  }
+  
+  this.genericService.Post("server/addserver",server).subscribe(res=>{
+    if(res){
+      alert('تم الإضافة بنجاح');
+  
+      this.serverfrm.reset();
+    }
+  },(error)=>{
+    if(error.status==200){
+      alert('تم الإضافة بنجاح');
+  
+      this.serverfrm.reset();
+    }
+  })
 }
 }

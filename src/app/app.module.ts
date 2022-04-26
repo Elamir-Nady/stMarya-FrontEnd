@@ -16,6 +16,7 @@ import { ModeratorComponent } from './Components/Admins/moderator/moderator.comp
 import { ServersComponent } from './Components/Admins/servers/servers.component';
 import { EditServerComponent } from './Components/Admins/edit-server/edit-server.component';
 import { GeneralServerComponent } from './Components/general-server/general-server.component';
+import { PhotoComponent } from './Components/SharedComponents/photo/photo.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { GeneralServerComponent } from './Components/general-server/general-serv
     ModeratorComponent,
     ServersComponent,
     EditServerComponent,
-    GeneralServerComponent
+    GeneralServerComponent,
+    PhotoComponent
   ],
   imports: [
     BrowserModule,
