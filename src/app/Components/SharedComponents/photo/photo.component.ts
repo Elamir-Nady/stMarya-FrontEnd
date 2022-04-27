@@ -14,26 +14,16 @@ gender:string=''
   constructor(private flagsService:FlagsService) {
 
     this.flagsService.photo.subscribe(res=>{
+  
       if(res!='null'){
-        this.img=this.url+res;
+        this.img=res;
 
-      }
-      else{
-        this.flagsService.gender.subscribe(resp=>{
-          if(resp=='m'){
-            this.img='assets/images/male.png'
-          }else{
-            this.img='assets/images/female.png'
-
-          }
-        })
-        //  alert(res)
-
-      }
+      }    
     })
    }
 
   ngOnInit(): void {
+   
   }
 
 }

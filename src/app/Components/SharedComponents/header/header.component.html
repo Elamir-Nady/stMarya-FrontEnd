@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div>
          <a (click)="prvphoto()">
-          <img  [hidden]="img=='null'" src="{{imgUrl+ img}}" alt="profilePicture" class="profilePhoto" >
+          <img  [hidden]="img=='null'" src="{{img}}" alt="profilePicture" class="profilePhoto" >
          </a> 
         
           <img [hidden]="gender!='f'||img!='null'" src="assets/images/female.png" class="profilePhoto"  alt="logo">
