@@ -17,6 +17,8 @@ import { ServersComponent } from './Components/Admins/servers/servers.component'
 import { EditServerComponent } from './Components/Admins/edit-server/edit-server.component';
 import { GeneralServerComponent } from './Components/general-server/general-server.component';
 import { PhotoComponent } from './Components/SharedComponents/photo/photo.component';
+import { AttendRequestComponent } from './Components/Admins/attend-request/attend-request.component';
+import { AttendRequestsComponent } from './Components/Admins/attend-requests/attend-requests.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { PhotoComponent } from './Components/SharedComponents/photo/photo.compon
     ServersComponent,
     EditServerComponent,
     GeneralServerComponent,
-    PhotoComponent
+    PhotoComponent,
+    AttendRequestComponent,
+    AttendRequestsComponent
   ],
   imports: [
     BrowserModule,

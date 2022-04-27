@@ -1,7 +1,10 @@
 <nav  class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
         <div>
-          <img (click)="prvphoto()" [hidden]="img=='null'" src="{{imgUrl+'/'+ img}}" alt="profilePicture" class="profilePhoto" >
+         <a (click)="prvphoto()">
+          <img  [hidden]="img=='null'" src="{{imgUrl+ img}}" alt="profilePicture" class="profilePhoto" >
+         </a> 
+        
           <img [hidden]="gender!='f'||img!='null'" src="assets/images/female.png" class="profilePhoto"  alt="logo">
           <img [hidden]="gender!='m'||img!='null'" src="assets/images/male.png"  class="profilePhoto"  alt="logo">
         <!-- <img src="assets/logo.jpg" class="profilePhoto">  -->
@@ -23,6 +26,12 @@
           </li>
           <li class="nav-item">
             <a [hidden]="roleId!='5'" class="nav-link" aria-current="page" [routerLink]="['/servers']" [routerLinkActive]="['active']">الخدام</a>
+          </li>
+          <li class="nav-item">
+            <a [hidden]="roleId=='5'" class="nav-link" aria-current="page" [routerLink]="['/attendRequest']" [routerLinkActive]="['active']">طلب تحضير</a>
+          </li>
+          <li class="nav-item">
+            <a [hidden]="roleId!='5'" class="nav-link" aria-current="page" [routerLink]="['/attendRequests']" [routerLinkActive]="['active']">طلبات التحضير</a>
           </li>
           <li class="nav-item">
             <a  class="nav-link" aria-current="page" (click)="edit()" [routerLinkActive]="['active']">تعديل بياناتي</a>

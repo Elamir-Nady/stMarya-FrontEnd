@@ -14,7 +14,10 @@ export class ServerHomeComponent implements OnInit {
   classId:number=0;
   myClass:IChild[]=[];
   constructor(private flagsService:FlagsService,private genericService:GenericService,private router:Router) { 
-
+   let clss= this.flagsService.getCLass();
+    if(clss=='1'){
+      this.router.navigate(['/photo']);
+    }
     this.flagsService.roleId.next(String(localStorage.getItem('roleId')));
     this.flagsService.classId.subscribe((res)=>{
       this.classId=res as unknown as number;

@@ -1,0 +1,16 @@
+<div class="container-fluid">
+
+    <div *ngIf="!Accept&&!Waiting" class="row">
+        <h3 style="text-align: center;" class="mt-5 "><span style="color: red;">{{myDate|date}}</span>  طلب تحضير اليوم </h3>
+            <input type="text" style="text-align: center;" class="form-control col-11 mb-3 ms-2 mt-3" value="{{server.id}}" readonly name="" id="">
+            <input type="text" style="text-align: center;" class="form-control col-11 mb-3 ms-2" value="{{server.name}}" readonly name="" id="">
+            <input type="text" style="text-align: center;" class="form-control col-11 mb-3 ms-2" value="{{myDate|date}}" readonly name="" id="">
+            <p *ngIf="alert" class="alert alert-primary col-12" style="text-align: center;">تم طلب التحضير بإنتظار موافقة أمين الخدمة</p>
+            <p *ngIf="!alert&&!notAttend"class="alert alert-danger col-12" style="text-align: center;">تم طلب التحضير مسبقا يرجي إنتظار موافقة أمين الخدمة</p>
+            <input type="button" (click)="attend()" value="طلب تحضير" class="btn btn-success">
+    </div>
+
+    <p *ngIf="Waiting" class="alert alert-primary mt-5 col-12" style="text-align: center;">تم طلب التحضير بإنتظار موافقة أمين الخدمة</p>
+    <p *ngIf="Accept" class="alert alert-success mt-5 col-12" style="text-align: center;">تم قبول طلب تحضيرك من أمين الخدمة</p>
+
+</div>

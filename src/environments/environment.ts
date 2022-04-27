@@ -3,9 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
+  production: false,
   baseUrl:"https://localhost:44316/api/",
-  imag:'https://localhost:44316'
+  // imag:'https://localhost:44316'
+  // baseUrl:"http://ebtiday-001-site1.itempurl.com/api/",
+  imag:'http://ebtiday-001-site1.itempurl.com/photoes/'
 
 };
 

@@ -1,9 +1,9 @@
 export interface IAttendance {
 
-    Id: number,
-    OwnerId: number,
-    Name: string,
-    PeraonAttendName: string,
-    AttendTime: Date
-    Month: string
+    id: number,
+    ownerId: number,
+    name: string,
+    peraonAttendName: string,
+    attendTime: Date
+    month: string
 }

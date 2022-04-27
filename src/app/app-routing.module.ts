@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './Components/Admins/admin/admin.component';
+import { AttendRequestComponent } from './Components/Admins/attend-request/attend-request.component';
+import { AttendRequestsComponent } from './Components/Admins/attend-requests/attend-requests.component';
 import { EditServerComponent } from './Components/Admins/edit-server/edit-server.component';
 import { ModeratorComponent } from './Components/Admins/moderator/moderator.component';
 import { ServersComponent } from './Components/Admins/servers/servers.component';
@@ -19,20 +21,23 @@ import { ServerGuard } from './Guards/Roles/server.guard';
 import { SubAdminGuard } from './Guards/Roles/sub-admin.guard';
 
 const routes: Routes = [
-  {path:'',redirectTo:"/home",pathMatch:"full"},
+  {path:'',redirectTo:"/photo",pathMatch:"full"},
   {path:"login",component:LoginComponent},
   {path:"myClass",component:ServerHomeComponent,canActivate:[AuthGuard&&ServerGuard]},
-  {path:"home",component:ServerHomeComponent,canActivate:[AuthGuard]},
-  {path:"admin",component:AdminComponent,canActivate:[AuthGuard&&(AdminGuard&&GeneralClassGuard)]},
-  {path:"servers",component:ServersComponent,canActivate:[AuthGuard&&(AdminGuard&&GeneralClassGuard)]},
-  {path:"allservers",component:ServersComponent,canActivate:[AuthGuard&&(SubAdminGuard&&GeneralClassGuard)]},
+  {path:"home",component:PhotoComponent,canActivate:[AuthGuard]},
+  {path:"admin",component:AdminComponent,canActivate:[AuthGuard&&(AdminGuard)]},
+  {path:"servers",component:ServersComponent,canActivate:[AuthGuard&&(AdminGuard)]},
+  {path:"allservers",component:ServersComponent,canActivate:[AuthGuard&&(SubAdminGuard)]},
   {path:"editServer",component:EditServerComponent,canActivate:[AuthGuard]},
-  {path:"subAdmin",component:SubAdminComponent,canActivate:[AuthGuard&&SubAdminGuard&&GeneralClassGuard]},
+  {path:"subAdmin",component:SubAdminComponent,canActivate:[AuthGuard&&SubAdminGuard]},
   {path:"moderator",component:ModeratorComponent,canActivate:[AuthGuard&&ModeratorGuard]},
   {path:"editChild",component:EditChildComponent,canActivate:[AuthGuard]},
   {path:"changePassword",component:ChangePasswordComponent,canActivate:[AuthGuard]},
   {path:"generalServer",component:GeneralServerComponent,canActivate:[AuthGuard&&ServerGuard]},
-  {path:"photo",component:PhotoComponent,canActivate:[AuthGuard&&ServerGuard]},
+  {path:"photo",component:PhotoComponent,canActivate:[AuthGuard]},
+  {path:"attendRequest",component:AttendRequestComponent,canActivate:[AuthGuard]},
+  {path:"attendRequests",component:AttendRequestsComponent,canActivate:[AuthGuard&&SubAdminGuard]},
+
 
 
 

@@ -56,23 +56,25 @@ export class LoginComponent implements OnInit {
                 this.flagsService.serverId.next(String(this.loginModel.id));  
                 this.flagsService.roleId.next(resp.roleId)  ;  
                 this.flagsService.classId.next(resp.classId)  ;  
-              if(resp.roleId==2&&resp.classId!=1){
+              // if(resp.roleId==2&&resp.classId!=1){
                
-                this.router.navigate(['/myClass']);
-              }
-              if(resp.roleId==2&&resp.classId==1){
+              //   this.router.navigate(['/myClass']);
+              // }
+              // if(resp.roleId==2&&resp.classId==1){
                
-                this.router.navigate(['/generalServer']);
-              }
-              if(resp.roleId==7&&resp.classId==1)        {
-                this.router.navigate(['/admin']);
-              }
-              if(resp.roleId==5&&resp.classId==1)        {
-                this.router.navigate(['/subAdmin']);
-              }
-              if(resp.roleId==4&&resp.classId==1)        {
-                this.router.navigate(['/moderator']);
-              }
+              //   this.router.navigate(['/generalServer']);
+              // }
+              // if(resp.roleId==7&&resp.classId==1)        {
+              //   this.router.navigate(['/admin']);
+              // }
+              // if(resp.roleId==5&&resp.classId==1)        {
+              //   this.router.navigate(['/subAdmin']);
+              // }
+              // if(resp.roleId==4&&resp.classId==1)        {
+              //   this.router.navigate(['/moderator']);
+              // }
+              this.router.navigate(['/photo']);
+
             }
           })
         }

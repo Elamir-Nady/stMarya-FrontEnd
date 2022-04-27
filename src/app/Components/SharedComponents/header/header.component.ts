@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  imgUrl= environment.imag+'/photoes';
+  imgUrl= environment.imag;
   roleId:string='';
   serverName!:string;
   gender!:string;
